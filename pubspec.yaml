@@ -1,0 +1,15 @@
+name: lang_to_docx
+description: Turns one or multiple files into a single docx file with syntax highlighting.
+version: 0.0.1
+# homepage: https://www.example.com
+
+environment:
+  sdk: '>=2.17.3 <3.0.0'
+
+executables:
+  langtodocx: main
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.16.0
+dependencies: {args: ^2.3.1, path: ^1.8.2}

@@ -37,15 +37,15 @@
         "pub2nix": "pub2nix"
       },
       "locked": {
-        "lastModified": 1652213615,
-        "narHash": "sha256-+eehm2JlhoKgY+Ea4DTxDMei/x4Fgz7S+ZPqWpZysuI=",
-        "owner": "tadfisher",
+        "lastModified": 1664396700,
+        "narHash": "sha256-bkB6U6Anu5xeX3P7kZFrcGABfg4DZgvi3SRgEpXGXP0=",
+        "owner": "Cir0X",
         "repo": "nix-dart",
-        "rev": "6f686ddf984306d944e9b5adf9f35f3a0a0a70b7",
+        "rev": "d4158692f6fb28a837c398e9f8d091c0e5b05ab2",
         "type": "github"
       },
       "original": {
-        "owner": "tadfisher",
+        "owner": "Cir0X",
         "repo": "nix-dart",
         "type": "github"
       }
@@ -81,15 +81,15 @@
     "pub2nix": {
       "flake": false,
       "locked": {
-        "lastModified": 1594192744,
-        "narHash": "sha256-pDvcXSG1Mh2BpwkqAcNDJzcupV3pIAAtZJLfkiHMAz4=",
-        "owner": "paulyoung",
+        "lastModified": 1658857493,
+        "narHash": "sha256-1JdcFEmjwlr0NGNbB3fgYqaUZPJbaFnxYifNPoL3bio=",
+        "owner": "cir0x",
         "repo": "pub2nix",
-        "rev": "0c7ecca590fcd1616db8c6468f799ffef36c85e9",
+        "rev": "47e6ab2e061e0c7a0ae6a949a8c6b34daf3ac298",
         "type": "github"
       },
       "original": {
-        "owner": "paulyoung",
+        "owner": "cir0x",
         "repo": "pub2nix",
         "type": "github"
       }

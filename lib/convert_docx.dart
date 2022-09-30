@@ -5,20 +5,29 @@ Future<int> convertToDocx({
   required String markdownLanguage,
   required List<File> files,
   required File outputFile,
+  bool separateToPages = false,
 }) async {
-  String content = (await Future.wait(files.map((file) async {
+  List<String> contents = await Future.wait(files.map((file) async {
     final String content = await file.readAsString();
     return "### ${basename(file.path)}\n```$markdownLanguage\n${content.trim()}\n```";
-  })))
-      .join("\n---\n\n");
+  }));
+
+  String content;
+  if (separateToPages) {
+      content = contents.join("\n\\newpage\n");
+  } else {
+      content = contents.join("\n---\n\n");
+  }
 
   final dir = await Directory.systemTemp.createTemp();
-  final temp = File("${dir.path}/temp");
+  final tempInputFile = File("${dir.path}/tempInputFile");
 
-  await temp.writeAsString(content);
+  await tempInputFile.writeAsString(content);
 
   final output = await Process.run("pandoc", [
-    temp.path,
+    tempInputFile.path,
+    "--filter",
+    "pandoc-docx-pagebreakpy",
     "-f",
     "markdown",
     "-t",

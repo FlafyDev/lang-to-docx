@@ -4,9 +4,12 @@ import 'package:lang_to_docx/convert_docx.dart';
 
 void main(List<String> arguments) async {
   final parser = ArgParser()
-    ..addOption("lang", abbr: "l", help: "Programming language supported in Markdown.")
+    ..addOption("lang",
+        abbr: "l", help: "Programming language supported in Markdown.")
     ..addOption("output", abbr: "o", help: "Points to the generated docx file.")
-    ..addFlag("help", abbr: "h");
+    ..addFlag("help", abbr: "h")
+    ..addFlag("separate",
+        abbr: "s", help: "Separates files to different pages.");
 
   ArgResults argResults = parser.parse(arguments);
 
@@ -21,5 +24,6 @@ void main(List<String> arguments) async {
     markdownLanguage: argResults["lang"] as String,
     files: paths.map((path) => File(path)).toList(),
     outputFile: File(argResults["output"] as String),
+    separateToPages: argResults["separate"] as bool,
   );
-} 
+}

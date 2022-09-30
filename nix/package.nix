@@ -1,4 +1,4 @@
-{ lib, stdenv, fetchFromGitHub, buildDartPackage, makeWrapper, pandoc }:
+{ lib, stdenv, fetchFromGitHub, buildDartPackage, makeWrapper, pandoc, pandoc-docx-pagebreak-py }:
 
 buildDartPackage rec {
   pname = "lang-to-docx";
@@ -11,7 +11,7 @@ buildDartPackage rec {
   nativeBuildInputs = [ makeWrapper ];
   
   postFixup = ''
-    wrapProgram $out/bin/langtodocx --set PATH ${lib.makeBinPath [ pandoc ]}
+    wrapProgram $out/bin/langtodocx --suffix PATH : ${lib.makeBinPath [ pandoc pandoc-docx-pagebreak-py ]}
   '';
 
   meta = with lib; {
